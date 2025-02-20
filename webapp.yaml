@@ -17,7 +17,8 @@ spec:
     spec:
       containers:
       - name: webapp
-        image: 09440/py10:v2
+        image: 09440/py10:v4
+        command: ["gunicorn", "py10.wsgi:application", "--bind", "0.0.0.0:8000"]
         ports:
         - containerPort: 8000
         env:
