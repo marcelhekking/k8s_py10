@@ -58,7 +58,7 @@ spec:
     app: webapp
   ports:
     - protocol: TCP
-      port: 5432
-      targetPort: 5432
+      port: 8000
+      targetPort: 8000
       nodePort: 30100
 
