@@ -19,6 +19,9 @@ spec:
         image: postgres:14.0-alpine
         ports:
         - containerPort: 5432
+        volumeMounts:
+          - name: postgres-volume-mount
+            mountPath: /var/lib/postgresql/data
         env:
         - name: POSTGRES_USER
           valueFrom:
@@ -35,6 +38,10 @@ spec:
             secretKeyRef:
               name: postgres-secret
               key: postgres-db
+      volumes:
+        - name: postgres-volume-mount
+          persistentVolumeClaim:
+            claimName: postgres-pvc
 ---
 apiVersion: v1
 kind: Service
