@@ -45,6 +45,8 @@ spec:
           value: /home/marcel/repos/own/github/py10/public/mediafiles/
         - name: STATICFILES_HOST
           value: /home/marcel/repos/own/github/py10/public/staticfiles/
+        - name: DJANGO_SETTINGS_MODULE
+          value: "py10.settings.production"
 ---
 apiVersion: v1
 kind: Service
